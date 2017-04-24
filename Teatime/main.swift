@@ -10,7 +10,7 @@ import Foundation
 import AppKit
 import CoreGraphics
 
-func flashScreen(times:Int) {
+func flashScreen(_ times:Int) {
     let duration: CGDisplayFadeInterval = 0.75
     
     var fadeToken: CGDisplayFadeReservationToken = 0
@@ -35,11 +35,11 @@ func flashScreen(times:Int) {
 
 
 
-if Process.arguments.count < 2 {
+if CommandLine.arguments.count < 2 {
     print("Usage: teatime <number of minutes to steep>")
     exit(EXIT_FAILURE)
 } else {
-    let steepTime = Process.arguments[1]
+    let steepTime = CommandLine.arguments[1]
     let intSteepTime = UInt32(steepTime)!
     
     sleep(intSteepTime*60)
